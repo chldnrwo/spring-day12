@@ -29,6 +29,7 @@ public class MemberController {
   @GetMapping("/addMember")
   public String addMember(Model model){
     MemberDto member = new MemberDto();
+    System.out.println(member.toString());
     model.addAttribute("member", member);
     return "members/addMember";
   }

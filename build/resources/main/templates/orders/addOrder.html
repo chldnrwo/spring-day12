@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 등록</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+    <h2>주문 등록</h2>
+    <div class="mb-3">
+        <form th:action method="post">
+            <div>
+                <label>주문회원</label>
+                <select name="memberId">
+                    <option th:each="member:${members}" th:value="${member.id}" th:text="${member.name}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>주문상품</label>
+                <select name="itemId">
+                    <option th:each="item:${items}" th:value="${item.id}" th:text="${item.name}">
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>주문수량</label>
+                <input type="number" class="form-control" th:name="orderQuantity">
+            </div>
+            <div class="form-row float-center">
+                <button type="submit" class="btn btn-primary">등록</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

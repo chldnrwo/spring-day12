@@ -4,7 +4,7 @@ spring:
     driver-class-name:  com.mysql.cj.jdbc.Driver
     url:  jdbc:mysql://localhost:3306/miniproject?useSSL=false&allowPublicKeyRetrieval=true&characterEncoding=UTF-8&serverTimezone=Asia/Seoul
     username: root
-    password: 1111
+    password: qkznaks1!2!3!
 
   # 콘솔에 SQL 출력 여부
   jpa:

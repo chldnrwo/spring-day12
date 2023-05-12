@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인</title>
+</head>
+<body>
+<div><h1>로그인</h1></div>
+<!-- action 을 비워놓으면 get 으로 들어온 url과 동일하게 post 로 그대로 가지고 감 -->
+<form th:action th:object="${login}" method="post">
+    <div>
+        <label for="loginId">로그인ID</label>
+        <input type="text" id="loginId" th:field="*{loginId}" placeholder="아이디를 입력해주세요"></input>
+    </div>
+    <div>
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" th:field="*{password}" placeholder="암호를 입력해주세요"></input>
+    </div>
+    <div>
+        <button type="submit">로그인</button>
+        <button type="button" th:onclick="|location.href='@{/}'|">취소</button>
+    </div>
+</form>
+</body>
+</html>

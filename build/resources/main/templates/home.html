@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>미니프로젝트 홈</title>
+</head>
+<body>
+<h1>홈 화면</h1>
+<div>
+  <button type="button" th:onclick="|location.href='@{/members/addMember}'|">회원가입</button>
+  <button type="button" th:onclick="|location.href='@{/members/login}'|">로그인</button>
+</div>
+</body>
+</html>

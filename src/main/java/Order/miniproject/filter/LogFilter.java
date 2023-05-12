@@ -22,8 +22,14 @@ public class LogFilter implements Filter {
     String uuid = UUID.randomUUID().toString();
 
     log.info("REQUEST: [{}], [{}]", uuid, requestURI);
-    chain.doFilter(request,response);
-    log.info("RESPONSE: [{}], [{}]", uuid, requestURI);
+    try {
+      chain.doFilter(request,response);
+    } catch (Exception e) {
+      throw e;
+    }  finally {
+      log.info("RESPONSE: [{}], [{}]", uuid, requestURI);
+    }
+
   }
 
   @Override
